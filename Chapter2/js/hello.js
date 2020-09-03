@@ -1,14 +1,20 @@
 let app = new Vue({
   el: "#app",
   data: {
-    message: '皆さん、こんにちは！',
-    url: 'https://wings.msn.to/',
-    flag: true,
-    email: 'Y-Suzuki@example.com',
-  },
-  computed: {
-    localEmail: function () {
-      return this.email.split('@')[0].toLowerCase();
+    author: {
+      name: '山田',
     }
   },
+  created: function () {
+    let that = this;
+
+    this.timer = setTimeout(function () {
+      //that.author.name = 'Y.YAMADA';
+      Vue.set(that.author, 'company', 'WINGSプロジェクト');
+    }, 3000);
+  },
+  beforeDestroy: function () {
+    clearInterval(this.timer);
+  }
+
 });
