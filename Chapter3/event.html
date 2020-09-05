@@ -9,16 +9,12 @@
 
 <body>
   <div id="app">
-    <label>
-      <input type="text" v-model="name" />
-    </label>
-    <p>{{ name }}</p>
-    <p>入力された値：{{ upperName }}</p>
+    <button v-on:click="onclick">クリック</button>
+    <p>{{ message }}</p>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
   <script src="../vue.js"></script>
-  <script src="js/hello.js"></script>
+  <script src="js/event.js"></script>
 </body>
 
 </html>

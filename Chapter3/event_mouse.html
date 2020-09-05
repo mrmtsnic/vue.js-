@@ -9,16 +9,11 @@
 
 <body>
   <div id="app">
-    <label>
-      <input type="text" v-model="name" />
-    </label>
-    <p>{{ name }}</p>
-    <p>入力された値：{{ upperName }}</p>
+    <img v-bind:src="path" alt="ロゴ画像" v-on:mouseenter="onmouseenter" v-on:mouseleave="onmouseleave" />
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
   <script src="../vue.js"></script>
-  <script src="js/hello.js"></script>
+  <script src="js/event_mouse.js"></script>
 </body>
 
 </html>

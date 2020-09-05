@@ -1,20 +1,25 @@
 let app = new Vue({
   el: "#app",
   data: {
-    author: {
-      name: '山田',
+    name: '',
+    //upperName: '',
+  },
+  created() {
+    this.delayFunc = _.debounce(this.getUpper, 2000);
+  },
+  computed: {
+    upperName: function () {
+      return this.name.toUpperCase();
     }
   },
-  created: function () {
-    let that = this;
-
-    this.timer = setTimeout(function () {
-      //that.author.name = 'Y.YAMADA';
-      Vue.set(that.author, 'company', 'WINGSプロジェクト');
-    }, 3000);
+  watch: {
+    name: function (newValue, oldValue) {
+      this.delayFunc();
+    }
   },
-  beforeDestroy: function () {
-    clearInterval(this.timer);
-  }
-
+  methods: {
+    getUpper: function () {
+      this.upperName = this.name.toUpperCase();
+    }
+  },
 });

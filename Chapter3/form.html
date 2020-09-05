@@ -5,20 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="css/event_point.css">
 </head>
 
 <body>
   <div id="app">
-    <label>
-      <input type="text" v-model="name" />
-    </label>
-    <p>{{ name }}</p>
-    <p>入力された値：{{ upperName }}</p>
+    <label for="name">氏名：</label>
+    <input type="text" id="name" v-model='myName'>
+    <div>こんにちは、{{ myName }}さん！</div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
   <script src="../vue.js"></script>
-  <script src="js/hello.js"></script>
+  <script src="js/form.js"></script>
 </body>
 
 </html>
